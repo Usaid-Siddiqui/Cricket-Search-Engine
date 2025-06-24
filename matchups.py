@@ -11,7 +11,7 @@ bowlerName = input("Enter bowler name (partial or full): ").lower()
 name_to_id = {}
 lower_to_name = {}
 
-with open('metadata/people.csv', encoding='utf-8') as f:
+with open('Data/metadata/people.csv', encoding='utf-8') as f:
     for row in csv.DictReader(f):
         name_to_id[row['name']] = row['identifier']
         lower_to_name[row['name'].lower()] = row['name']
@@ -61,7 +61,7 @@ stumpeds = 0
 extras = 0
 hitwickets = 0
 
-folder = 'tests_data/*.json'
+folder = 'Data/tests_data/*.json'
 
 for filename in glob.glob(folder):
     with open(filename) as f:

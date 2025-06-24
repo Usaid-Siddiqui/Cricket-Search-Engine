@@ -6,7 +6,7 @@ from collections import defaultdict
 # Load people.csv: map name -> id and also lowercase lookup
 name_to_id = {}
 lower_name_to_name = {}
-with open('people.csv', newline='', encoding='utf-8') as csvfile:
+with open('Data/metadata/people.csv', newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         name = row['name']
@@ -39,7 +39,7 @@ except (ValueError, IndexError):
 player_id = name_to_id[chosen_name]
 
 # Step 3: Scan JSONs once, collect short names for player_id and accumulate stats for those short names
-folder = 'tests_data/*.json'
+folder = 'Data/tests_data/*.json'
 
 short_names_for_player = set()
 stats = defaultdict(lambda: {'runs':0, 'wickets':0, 'deliveries':0})
